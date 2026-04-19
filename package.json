@@ -1,0 +1,14 @@
+{
+  "name": "portal-website",
+  "version": "1.0.0",
+  "description": "Root package.json to run both client and server concurrently",
+  "scripts": {
+    "postinstall": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "start": "concurrently \"npm start --prefix server\" \"npm start --prefix client\"",
+    "install:all": "npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
